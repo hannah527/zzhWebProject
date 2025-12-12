@@ -1,0 +1,20 @@
+body {
+    background-color: #ccc;
+    margin: 0;
+}
+
+.wrap {
+    background-color: #fff;
+    width: 1024px;
+    margin: auto;
+    text-align: center;
+}
+
+
+.content {
+    width: 100%;
+}
+
+.content img {
+    width: 100%;
+}
