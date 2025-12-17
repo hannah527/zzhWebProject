@@ -1,0 +1,320 @@
+/* style.css */
+
+/* 1. HOME 主視覺英雄區塊 */
+.hero-section {
+    height: 100vh; /* 佔滿整個螢幕的高度 */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+
+    /* --- 設定背景圖片 --- */
+    background-image: url('images/main-visual.jpg'); /* <-- 請確認圖片路徑正確 */
+    background-size: cover;          /* 圖片填滿整個區塊，不變形 */
+    background-position: center;     /* 圖片置中顯示 */
+    background-attachment: fixed;    /* 產生滾動時的視差效果，非常加分！ */
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin: 0;
+    /* 為文字加上陰影，使其在複雜背景上更清晰 */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);}
+
+/* 1. 全域與變數設定 */
+:root {
+    --primary-color: #00548B; /* 主色: 藍色 */
+    --accent-color: #F8B74A;  /* 強調色: 橘色 */
+    --text-color: #333;
+    --background-color: #f4f4f4;
+}
+
+html {
+    /* 啟用平滑滾動效果 */
+    scroll-behavior: smooth;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* 2. Header 與 Navigation 導覽列 */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: var(--primary-color);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+}
+
+nav li {
+    margin: 0 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px;
+    transition: all 0.3s ease-in-out;
+    display: block;
+}
+
+/* 3. 導覽列項目 - 動態高亮 (Active State) 效果 */
+nav a.active {
+    color: var(--accent-color);
+    /* 輕微的 Y 軸位移動畫 */
+    transform: translateY(-3px);
+}
+
+/* 4. 主要內容區塊 */
+main {
+    width: 100%;
+}
+
+section {
+    /* 讓每個區塊至少佔滿一個螢幕高度，方便滾動監聽 */
+    min-height: 100vh;
+    padding: 80px 5%;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 40px;
+}
+
+/* 讓最後一個區塊沒有底線 */
+section:last-of-type {
+    border-bottom: none;
+}
+
+/* 5. 頁尾 */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+}
+/* style.css */
+
+/* ... 其他 CSS 內容 ... */
+
+/* 6. Carousel 輪播系統 */
+.carousel-container {
+    width: 100%;
+    max-width: 900px; /* 限制輪播最大寬度 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.carousel-viewport {
+    width: 100%;
+    overflow: hidden; /* 隱藏軌道上看不見的部分 */
+}
+
+.carousel-track {
+    display: flex;
+    /* transition 會由 JS 動態添加，以實現無縫滾動 */
+}
+
+.card {
+    flex: 0 0 calc(100% / 3); /* 始終保持三張卡片可見 */
+    padding: 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05); /* 滑鼠懸停時輕微放大 */
+}
+
+.card-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border-top: 5px solid var(--primary-color);
+}
+
+.card-content h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+}
+
+.year-tag, .category-tag {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    margin-right: 5px;
+}
+
+.year-tag {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.category-tag {
+    background-color: #e0e0e0;
+    color: #555;
+}
+
+/* 7. Modal 模態視窗 */
+.modal {
+    display: none; /* 預設隱藏 */
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 30px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 700px;
+    border-radius: 10px;
+    position: relative;
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.modal-close {
+    color: #aaa;
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.modal-close:hover {
+    color: white;
+}
+/* style.css */
+
+/* ... 其他 CSS 內容 ... */
+
+/* 8. Lightbox 燈箱系統 (Section B) */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 900px;
+}
+
+.lightbox-card {
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.lightbox-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+}
+
+/* 我們可以讓燈箱卡片共用 .card-content 的樣式 */
+.lightbox-card .card-content {
+    /* 樣式已在第 6 節定義，無需重複 */
+}
+
+/* 讓 lightbox-modal 共用 .modal 的樣式 */
+#lightbox-modal {
+    /* 樣式已在第 7 節定義，我們在 HTML 中已加入 modal class，
+       所以這裡不需要額外的 CSS，除非您想做客製化區別 */
+}
+/* style.css */
+
+/* ... 其他 CSS 內容 ... */
+
+/* 9. 統一卡片圖片樣式 */
+.card img,
+.lightbox-card img {
+    width: 100%;            /* 讓圖片寬度填滿卡片 */
+    height: 180px;          /* 給一個固定的高度 */
+    object-fit: cover;      /* 裁切圖片以適應尺寸，保持比例不變形 */
+    display: block;         /* 移除圖片下方的微小空隙 */
+    border-top-left-radius: 8px;  /* 讓圖片左上角也跟卡片一樣是圓角 */
+    border-top-right-radius: 8px; /* 讓圖片右上角也跟卡片一樣是圓角 */
+}
+/* 10. 彈出視窗 (Modal) 內圖片的響應式樣式 */
+.modal-content img {
+    max-width: 100%;        /* 圖片最大寬度為其容器 (modal-content) 的 100% */
+    height: auto;           /* 高度自動縮放，以保持圖片的原始比例 */
+    display: block;         /* 確保圖片為區塊元素，方便控制邊距 */
+    margin: 0 auto 20px;    /* 圖片水平置中，並和下方的文字內容保留 20px 的間距 */
+    border-radius: 8px;     /* 也可以給圖片加上圓角，使其更好看 */
+}
+/* 為了讓複製過來的文字樣式正確，也加上這個 */
+.modal-text-content h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+}
+
+.hero-foreground-image {
+    /* 關鍵一：限制最大寬度 */
+    /* 圖片的寬度最多只能是其父容器 (hero-content) 的 100%，
+       這樣就絕對不會產生水平滾輪。*/
+    max-width: 100%;
+
+    /* 關鍵二：保持圖片比例 */
+    /* 高度設為 auto，讓它能根據寬度的變化自動縮放，防止圖片變形。*/
+    height: auto;
+
+    /* (可選) 限制一個絕對的最大寬度，避免在超大螢幕上圖片也變得過大 */
+    max-width: 500px; /* 您可以根據圖片的設計調整這個數值，例如 400px 或 600px */
+
+    /* 視覺優化：讓圖片和下方的標題之間有點間距 */
+    margin-bottom: 25px;
+}
