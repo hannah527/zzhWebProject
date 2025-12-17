@@ -1,21 +1,241 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./css/public.css">
+    <title>作品集</title>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
-    <div class="wrap">
-        <div class="content">
-            <img src="./images/01.jpg" alt="">
-            <img src="./images/02.jpg" alt="">
-            <img src="./images/03.jpg" alt="">
-            <img src="./images/04.jpg" alt="">
-            <img src="./images/05.jpg" alt="">
-            <img src="./images/06.jpg" alt="">
+
+    <!-- I. 頁首與導覽系統 -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home" class="active">HOME</a></li>
+                <li><a href="#section-a">POSTER</a></li>
+                <li><a href="#section-b">BANNER</a></li>
+                <li><a href="#section-c">OTHER</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <img src="./images/1封面.jpg" alt="網站主視覺 Logo 或前景圖" class="hero-foreground-image">
+            <h1>PORTFOLIO</h1>
+        </div>
+    </section>
+
+    <main>
+        <!-- II. 區塊 A: 進階輪播 -->
+        <section id="section-a">
+            <h2>海報POSTER</h2>
+            <div class="carousel-container">
+                <div class="carousel-viewport">
+                    <div class="carousel-track">
+                        <!-- 總共五張卡片 -->
+                        <div class="card">
+                            
+                            <div class="card-content">
+                                <img src="./images/1.png" alt="">
+                                <h3>海報 1</h3>
+                                <p class="description">漸層應用</p>
+                                <span class="year-tag">2025</span>
+                                <span class="category-tag">分類甲</span>
+                            </div>
+                        </div>
+                        <div class="card">
+                            
+                            <div class="card-content">
+                                <img src="./images/2.png" alt="">
+                                <h3>海報 2</h3>
+                                <p class="description">元素＆3D</p>
+                                <span class="year-tag">2025</span>
+                                <span class="category-tag">分類乙</span>
+                            </div>
+                        </div>
+                        <div class="card">
+                            
+                            <div class="card-content">
+                                <img src="./images/3.png" alt="">
+                                <h3>海報 3</h3>
+                                <p class="description">漸層應用</p>
+                                <span class="year-tag">2025</span>
+                                <span class="category-tag">分類甲</span>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-content">
+                                <img src="./images/4.png" alt="">
+                                <h3>海報 4</h3>
+                                <p class="description">封套扭曲</p>
+                                <span class="year-tag">2025</span>
+                                <span class="category-tag">分類丙</span>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-content">
+                                <img src="./images/5.png" alt="">
+                                <h3>海報 5</h3>
+                                <p class="description">封套扭曲</p>
+                                <span class="year-tag">2025</span>
+                                <span class="category-tag">分類乙</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ... SECTION-B 和 C ... -->
+
+    </main>
+
+    <!-- 全螢幕模態視窗 (Modal) for Carousel -->
+    <div id="carousel-modal" class="modal">
+        <span class="modal-close">&times;</span>
+        <div class="modal-content">
+            <!-- 點擊卡片後的內容會注入這裡 -->
         </div>
     </div>
+
+    <!-- ... footer 和 script 標籤 ... -->
+
+    <!-- III. 區塊 B: 簡易燈箱 -->
+    <section id="section-b">
+            <h2>橫式廣告BANNER</h2>
+            <div class="grid-container">
+                <!-- 燈箱卡片 -->
+                <div class="lightbox-card">
+                    <div class="card-content">
+                        <img src="./images/9banner滑板車.png" alt="">
+                        <h3>電動滑板車</h3>
+                        <p class="description">點擊我，查看放大內容。</p>
+                        <span class="year-tag">2025</span>
+                        <span class="category-tag">展示</span>
+                    </div>
+                </div>
+                <div class="lightbox-card">
+                    <div class="card-content">
+                        <img src="./images/9banner水瓶.png" alt="">
+                        <h3>保溫瓶</h3>
+                        <p class="description">點擊我，查看放大內容。</p>
+                        <span class="year-tag">2025</span>
+                        <span class="category-tag">作品</span>
+                    </div>
+                </div>
+            </div>
+        <!-- ... SECTION-C ... -->
+
+        </main>
+
+        <!-- 全螢幕模態視窗 (Modal) for Carousel -->
+        <div id="carousel-modal" class="modal">
+            <!-- ... (已完成) ... -->
+        </div>
+
+        <!-- 全螢幕模態視窗 (Modal) for Lightbox -->
+        <div id="lightbox-modal" class="modal">
+            <span class="modal-close">&times;</span>
+            <div class="modal-content">
+                <!-- 點擊燈箱卡片後的內容會注入這裡 -->
+            </div>
+        </div>
+
+
+        <!-- ... footer 和 script 標籤 ... -->
+
+    </section>
+
+    <!-- IV. 區塊 C: 進階輪播 -->
+    <section id="section-c">
+        <h2>其他作品OTHER</h2>
+        <!-- 輪播內容將會放在這裡 -->
+        <!-- index.html -->
+
+        <!-- ... 其他 HTML 內容 ... -->
+        <div class="carousel-container">
+            <div class="carousel-viewport">
+                <div class="carousel-track">
+                    <!-- 總共五張卡片 -->
+                    <div class="card">
+                        <div class="card-content">
+                            <img src="./images/6.png" alt="">
+                            <h3>包裝設計</h3>
+                            <p class="description">這是第一張卡片的描述文字。</p>
+                            <span class="year-tag">2025</span>
+                            <span class="category-tag">分類甲</span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <img src="./images/7.png" alt="">
+                            <h3>包裝設計</h3>
+                            <p class="description">這是第二張卡片的描述文字。</p>
+                            <span class="year-tag">2025</span>
+                            <span class="category-tag">分類乙</span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <img src="./images/8.png" alt="">
+                            <h3>AICG</h3>
+                            <p class="description">貼文應用</p>
+                            <span class="year-tag">2025</span>
+                            <span class="category-tag">分類甲</span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <img src="./images/9-1.png" alt="">
+                            <h3>AICG</h3>
+                            <p class="description">BANNER合成</p>
+                            <span class="year-tag">2025</span>
+                            <span class="category-tag">分類丙</span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <img src="./images/9.jpg" alt="">
+                            <h3>社群貼文</h3>
+                            <p class="description">這是第五張卡片的描述文字。</p>
+                            <span class="year-tag">2025</span>
+                            <span class="category-tag">分類乙</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 全螢幕模態視窗 (Modal) for Carousel -->
+        <div id="carousel-modal" class="modal">
+            <span class="modal-close">&times;</span>
+            <div class="modal-content">
+                <!-- 點擊卡片後的內容會注入這裡 -->
+            </div>
+        </div>
+
+        <!-- ... footer 和 script 標籤 ... -->
+
+    </section>
+
+    <!-- V. 聯絡資訊區塊 -->
+    <section id="contact">
+        <h2>聯絡我</h2>
+        <img src="./images/1名片.jpg" alt="網站主視覺 Logo 或前景圖" class="hero-foreground-image">
+        <P>ASD05271015@GMAIL.COM</P>
+        <!-- 聯絡表單或資訊將會放在這裡 -->
+    </section>
+    </main>
+
+    <!-- VI. 頁尾 -->
+    <footer>
+        <p>&copy; 2025 卓仲涵課程練習. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript 檔案 -->
+    <script src="./css/script.js"></script>
 </body>
+
 </html>
